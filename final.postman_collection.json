@@ -1,0 +1,588 @@
+{
+	"info": {
+		"_postman_id": "e91590eb-d374-4452-ae83-76e97cdacaa3",
+		"name": "final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12443398"
+	},
+	"item": [
+		{
+			"name": "coderhouse",
+			"item": [
+				{
+					"name": "productos",
+					"item": [
+						{
+							"name": "crear producto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Sillón Gamer\",\r\n    \"description\": \"Ergonómico Masajeador Apoya Pie Silla Reclinabl\",\r\n    \"price\": 109000,\r\n    \"code\":\"aaj\",\r\n    \"stock\": 15\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/products/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"products",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "traer productos",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"K1@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "eliminar producto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/products/delete/653d11e7e3a035e10499ab9a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"products",
+										"delete",
+										"653d11e7e3a035e10499ab9a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "traer un producto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/products/64ebdcd8495a497f5d94b035",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"products",
+										"64ebdcd8495a497f5d94b035"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "actualizar producto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Sillón Gamer\",\r\n  \"description\": \"Ergonómico Masajeador Apoya Pie Silla Reclinabl\",\r\n  \"price\": 190000,\r\n  \"code\": \"aaj\",\r\n  \"stock\": 15,\r\n  \"cart\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/products/update/653d20f8e18a10c73907c96a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"products",
+										"update",
+										"653d20f8e18a10c73907c96a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "carrito",
+					"item": [
+						{
+							"name": "crear carrito",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"products\":[]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/carts/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"carts",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "traer carrito",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/carts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"carts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "eliminar carrito",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/carts/delete/6520b433f4688312bb22c8be",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"carts",
+										"delete",
+										"6520b433f4688312bb22c8be"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "traer un carrito",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/carts/6520b2f4f4688312bb22c8bb",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"carts",
+										"6520b2f4f4688312bb22c8bb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "actualizar carrito",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"products\": [\r\n    {\r\n      \"$oid\": \"64ebdd1a114f0723a14338ef\"\r\n      \r\n    },\r\n    {\r\n        \"$oid\":\"64ee877db9d6500ca683c806\"\r\n    }\r\n    \r\n  ]\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/carts/update/652b145a5fa2ed7c0fd7c919",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"carts",
+										"update",
+										"652b145a5fa2ed7c0fd7c919"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "usuarios",
+					"item": [
+						{
+							"name": "crear usuario",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Pablo\",\r\n    \"last_name\": \"Alboran\",\r\n    \"email\": \"palboran@gmail.com\",\r\n    \"age\": 25,\r\n    \"password\": \"12345\",\r\n    \"loggedBy\": \"yes\",\r\n    \"role\":\"user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "traer usuarios",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "eliminar usuario",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "traer un usuario",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9090/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "actualizar usuario",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n  \"first_name\": \"Antonella\",\r\n  \"last_name\": \"Miranda\",\r\n  \"email\": \"amiranda@gmail.com\",\r\n  \"age\": 14,\r\n  \"loggedBy\": \"yes\",\r\n  \"role\": \"user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/users/update/6525df9dfea25b3947d6202a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"users",
+										"update",
+										"6525df9dfea25b3947d6202a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login usuarios",
+					"item": [
+						{
+							"name": "loginUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"cverde@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/jwt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"jwt"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "email",
+					"item": [
+						{
+							"name": "envio mail",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"amansilla610@gmail.com\",\r\n    \"to\": \"amansilla610@gmail.com\",\r\n    \"subject\": \"mail de prueba\",\r\n    \"html\": \"hola esto es el tercer mensaje de prueba\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/email",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"email"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "pagos",
+					"item": [
+						{
+							"name": "intento pago",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"6567b847b44f490ac6c34ffd\",\r\n    \"monto\": 1000,\r\n    \"moneda\": \"usd\",\r\n    \"tarjeta\": {\r\n        \"numero\": \"4242424242424242\",\r\n        \"expMes\": 12,\r\n        \"expAnio\": 2023,\r\n        \"cvc\": \"123\",\r\n        \"nombre\": \"John Doe\"\r\n    },\r\n    \"direccionFacturacion\": {\r\n        \"linea1\": \"123 Main Street\",\r\n        \"ciudad\": \"Ciudad\",\r\n        \"estado\": \"Estado\",\r\n        \"codigoPostal\": \"12345\",\r\n        \"pais\": \"US\"\r\n    }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9090/api/payments/payment-intent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"payments",
+										"payment-intent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "confirmacion pago",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "sk_test_51OO8m8D6SSEtdpiBPuo9ZFzRtKS8b9CsT2l2ihdNgjY95M7gdBj9eDVZTUEcP7nllvjf1Oo29gjJgEBpWmyP3wet00laK45Q2n",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "payment_method",
+											"value": "pm_1OQAhlD6SSEtdpiBpTCFvlpZ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.stripe.com/v1/payment_intents/pi_3OQAhmD6SSEtdpiB0R2nC6Oi/confirm",
+									"protocol": "https",
+									"host": [
+										"api",
+										"stripe",
+										"com"
+									],
+									"path": [
+										"v1",
+										"payment_intents",
+										"pi_3OQAhmD6SSEtdpiB0R2nC6Oi",
+										"confirm"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

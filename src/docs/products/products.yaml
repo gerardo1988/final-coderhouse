@@ -1,0 +1,163 @@
+paths:
+  /api/products/:
+    get:
+      summary: obetiene toda la lista de productos.
+      tags:
+        - Products
+      responses:
+        "200":
+          description: "operación exitosa, devuelve una lista de productos."
+        "400":
+          description: "envío de datos no esperados."
+        "500":
+          description: "Error inesperado del servidor, no se puede manejar el proceso."
+  /api/products/{_id}:
+    get:
+      summary: obetiene un solo producto.
+      tags:
+        - Products
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          description: id del producto es requerido
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: "operación exitosa, devuelve una lista de productos."
+        "400":
+          description: "envío de datos no esperados."
+        "500":
+          description: "Error inesperado del servidor, no se puede manejar el proceso."
+  /api/products/save:
+    post:
+      summary: crea un nuevo producto.
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#components/requestBodies/NewProduct'
+      responses:
+        "201":
+          description: "operación exitosa, crea un nuevo producto."
+        "400":
+          description: "envío de datos no esperados."
+        "500":
+          description: "Error inesperado del servidor, no se puede manejar el proceso."
+  /api/products/delete/{_id}:
+    delete:
+      summary: elimina un producto por id.
+      tags:
+        - Products
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          description: parametro para encontrar el id del producto a eliminar
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: "operación exitosa, el producto se ha eliminado satisfactoriamente."
+        "400":
+          description: "no se ha encontrado un producto."
+        "500":
+          description: "Error inesperado del servidor, no se puede manejar el proceso."      
+  /api/products/update/{_id}:
+    put:
+      summary: actualiza un producto por id.
+      tags:
+        - Products
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          description: parametro para encontrar el id del producto a modificar
+          schema:
+            $type: String
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        "202":
+          description: "operación exitosa, el producto se ha actualizado satisfactoriamente."
+        "400":
+          description: "no se ha encontrado un producto para actualizar."
+        "500":
+          description: "Error inesperado del servidor, no se puede manejar el proceso."
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id autogenerado por Mongo.
+        title:
+          type: String
+          description: titulo del producto.
+        description:
+          type: String
+          description: detalles del producto.
+        price:
+          type: Number
+          description: precio base del producto.
+        code:
+          type: String
+          description: codigo identificatorio del producto.
+        stock:
+          type: Number
+          description: cantidad disponible del producto.
+        cart:
+          type: mongoose.SchemaTypes.ObjectId
+          description: carro asociado al producto.
+      example:
+        _id: 64ebdd1a114f0723a14338ef
+        title: parlantes
+        description: parlantes para pc
+        price: 15000
+        code: a0001
+        stock: 35
+  requestBodies:
+    NewProduct:
+      type: object
+      required:
+        - title
+        - description
+        - price
+        - code
+        - stock
+      properties:
+        title:
+          type: String
+          description: titulo del producto
+        description:
+          type: String
+          description: detalles del producto
+        price:
+          type: Number
+          description: precio del producto
+        code:
+          type: String
+          description: codigo del producto
+        stock:
+          type: Number
+          description: cantidad disponible
+        cart:
+          type: mongoose.SchemaTypes.ObjectId
+          description: carrito asociado
+      example:
+        _id: 64ebdd1a114f0723a14338ef
+        title: parlantes
+        description: parlantes para pc
+        price: 15000
+        code: a0001
+        stock: 35

@@ -1,0 +1,121 @@
+paths:
+  /api/carts/:
+    get:
+      summary: obetiene toda la lista de carritos.
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: "operación exitosa, devuelve una lista de carritos."
+        "400":
+          description: "envío de datos no esperados."
+        "500":
+          description: "Error inesperado del servidor, no se puede manejar el proceso."
+  /api/carts/{_id}:
+    get:
+      summary: obetiene un solo carrito por el id.
+      tags:
+        - Carts
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          description: id del carrito del requerido
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: "operación exitosa, devuelve un carrito."
+        "400":
+          description: "envío de datos no esperados."
+        "500":
+          description: "Error inesperado del servidor, no se puede manejar el proceso."
+  /api/carts/save:
+    post:
+      summary: crea un nuevo carrito.
+      tags:
+        - Carts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#components/requestBodies/NewCart'
+      responses:
+        "201":
+          description: "operación exitosa, crea un nuevo carrito."
+        "400":
+          description: "envío de datos no esperados."
+        "500":
+          description: "Error inesperado del servidor, no se puede manejar el proceso."
+  /api/carts/delete/{_id}:
+    delete:
+      summary: elimina un carrito por id.
+      tags:
+        - Carts
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          description: parametro para encontrar el id del carrito a eliminar
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: "operación exitosa, el carrito se ha eliminado satisfactoriamente."
+        "400":
+          description: "no se ha encontrado un carrito."
+        "500":
+          description: "Error inesperado del servidor, no se puede manejar el proceso."
+  /api/carts/update/{_id}:
+    put:
+      summary: actualiza un carrito por id.
+      tags:
+        - Carts
+      parameters:
+        - name: _id
+          in: path
+          required: true
+          description: parametro para encontrar el id del carrito a modificar
+          schema:
+            $type: String
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cart'
+      responses:
+        "202":
+          description: "operación exitosa, el carrito se ha actualizado satisfactoriamente."
+        "400":
+          description: "no se ha encontrado un carrito para actualizar."
+        "500":
+          description: "Error inesperado del servidor, no se puede manejar el proceso."      
+
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id autogenerado por Mongo.
+        products:
+          type: mongoose.SchemaTypes.ObjectId
+          description: productos asociados al carrito.
+      example:
+        _id: 652b145a5fa2ed7c0fd7c919
+        product: [64ebdd1a114f0723a14338ef]
+  requestBodies:
+    NewCart:
+      type: object
+      required:
+        - products
+      properties:
+        products:
+          type: mongoose.SchemaTypes.ObjectId
+          description: productos asociados al carrito
+      example:
+        _id: 652b145a5fa2ed7c0fd7c919
+        product: [64ebdd1a114f0723a14338ef]
