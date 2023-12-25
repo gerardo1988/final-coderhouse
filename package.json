@@ -2,9 +2,10 @@
   "name": "primer-pre-entrega",
   "version": "1.0.0",
   "description": "",
-  "main": "nodemon src/App.js",
+  "main": "node src/App.js",
   "type": "module",
   "scripts": {
+    "start": "node src/App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
