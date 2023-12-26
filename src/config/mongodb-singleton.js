@@ -19,7 +19,7 @@ export default class MongoSingleton {
 
     #connectMongoDB = async () => {
         try {
-            await mongoose.connect('mongodb+srv://amansilla610:vlocity1@cluster0.qzfssm3.mongodb.net/?retryWrites=true&w=majority', {
+            await mongoose.connect(config.mongoUrl, {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
                 w:1
