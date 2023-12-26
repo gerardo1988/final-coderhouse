@@ -2,7 +2,7 @@
   "name": "primer-pre-entrega",
   "version": "1.0.0",
   "description": "",
-  "main": "node src/App.js",
+  "main": "node src/app.js",
   "type": "module",
   "scripts": {
     "start": "node src/App.js",
